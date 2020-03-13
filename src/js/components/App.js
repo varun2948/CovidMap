@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../../static/images/saklogo.jpg';
-import TestComponent from './TestComponent';
+import MainComponent from './MainComponent';
 
 class App extends Component {
   constructor(props) {
@@ -9,12 +9,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <TestComponent data="Sakchyam" />
-        <img alt="sakchyam" src={logo} />
-      </div>
-    );
+    return <MainComponent />;
   }
 }
 

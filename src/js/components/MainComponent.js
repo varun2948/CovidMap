@@ -18,6 +18,10 @@ class MainComponent extends Component {
             return a + b.Confirmed;
         }, 0);
         console.log(totalCases);
+        
+        function formatNumber(num) {
+            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        }
         return ( 
             <body onunload="" className="map-fullscreen page-homepage navigation-off-canvas" id="page-top">
                 <div id="outer-wrapper">
@@ -86,7 +90,7 @@ class MainComponent extends Component {
                                                     <form className="main-search" role="form" method="post" action="http://themestarz.net/html/spotter/index-osm.html?">
                                                         <header className="clearfix">
                                                             <h3 className="pull-left">Search</h3>
-                                                            <h2>Total Number Of Cases: <span className="total_cases">{totalCases}</span> </h2>
+                                                            <h2>Total Number Of Cases: <span className="total_cases">{formatNumber(totalCases)}</span> </h2>
                                                             <a href="index-osm.html#advanced-search" className="show-more pull-right" data-toggle="collapse" aria-expanded="false" aria-controls="advanced-search">Advanced Search</a>
                                                         </header>
                                                         

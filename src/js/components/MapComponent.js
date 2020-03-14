@@ -19,25 +19,32 @@ class MapComponent extends React.Component {
         this.state = { 
             fulldata: []
          }
+         this.circleMarkerRef= React.createRef();
     }
     componentDidMount(){
         this.setState({fulldata: this.props.CoronaData});
+        
+        // d.className += " otherclass";
+    }
+    componentDidUpdate(){
+        var d = this.circleMarkerRef.current;
+        console.log(d,'d');
+        d.className= 'blinking'
     }
     render() { 
         const{fulldata}=this.state;
-        console.log(this.state.fulldata,'fulldata');
         const position = [27.505, 84.09];
         return ( 
             <Map
-            preferCanvas
+            // preferCanvas
           zoom={4}
           maxZoom={18}
           attributionControl
           zoomControl
           doubleClickZoom
           scrollWheelZoom
-          dragging
-          animate
+        //   dragging
+        //   animate
            center={position} style={{height:'900px',width:'100%'}}>
                 <TileLayer
                 // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -45,7 +52,7 @@ class MapComponent extends React.Component {
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 />
                  <MarkerClusterGroup
-            disableClusteringAtZoom={12}
+            disableClusteringAtZoom={5}
             // ref={groupRef}
           >
                 { fulldata && fulldata.map(data=>{
@@ -56,9 +63,31 @@ class MapComponent extends React.Component {
                      const confirmed_deaths= data['Deaths'];
                      const confirmed_recovered= data['Recovered'];
                     // const {recovered,country_region,province_state}= data;
-                    console.log(data['Province/State'],'country');
+                    let filteredRadius = 6;
+                    let filtercolor= 'rgba(255, 0, 0, 0.274)';
+                    
+                    if(confirmed_cases > 0 && confirmed_cases <= 1000){
+                            filteredRadius = 6;
+                            filtercolor= 'red';
+                            filtercolor= 'rgba(255, 0, 0, 0.274)';
+                    }
+                    else if(confirmed_cases > 1000 && confirmed_cases <= 10000){
+                        filteredRadius = 10;
+                        filtercolor= 'rgba(255, 0, 0, 0.5)';
+
+                    }
+                    else if (confirmed_cases >10000 && confirmed_cases < 20000){
+
+                        filteredRadius = 14;
+                        filtercolor= 'rgba(255, 0, 0, 0.7)';
+                    }
+                     if(confirmed_cases > 20000){
+                         filteredRadius = 50;
+                         filtercolor= 'rgba(255, 0, 0, 1)';
+                     }
+                    
                 return (
-                    <CircleMarker style={{pointerType: 'cursor'}} center={{lat:data.Latitude, lng:data.Longitude}} position={position}>
+                    <CircleMarker onClick={console.log(this)} ref={this.circleMarkerRef} className='blinking' radius={filteredRadius} color={filtercolor} fillColor={filtercolor} style={{pointerType: 'cursor',animation: 'fade 1s infinite alternate'}} center={{lat:data.Latitude, lng:data.Longitude}} position={position}>
                     <Popup>
                         <div class="infobox ">
                             <div class="inner">

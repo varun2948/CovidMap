@@ -4,8 +4,22 @@
 
 .total_cases{
     font-size: 27px;
-    color: red;
+    color: rgba(255, 0, 0, 0.5);
 }
 .clearfix h2{
     color: white;
 }
+
+@keyframes fade { 
+    from { opacity: 0.1; } 
+  }
+  
+.leaflet-marker-icon {
+animation: fade 2s infinite alternate;
+}
+.blinking {
+    animation: fade 1s infinite alternate;
+    }
+// .leaflet-zoom-animated {
+// animation: fade 1s infinite alternate;
+// }

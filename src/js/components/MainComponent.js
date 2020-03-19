@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapComponent from './MapComponent';
 import Logo from '../../images/logo.jpg';
 import CoronaData from '../../data/coronaData_13March.json';
+import DonutChart from './DonutChart';
 class MainComponent extends Component {
     constructor(props) {
         super(props);
@@ -94,7 +95,7 @@ class MainComponent extends Component {
                                                             <a href="index-osm.html#advanced-search" className="show-more pull-right" data-toggle="collapse" aria-expanded="false" aria-controls="advanced-search">Advanced Search</a>
                                                         </header>
                                                         
-                                                
+                                                        <DonutChart/>
                                                     </form>
                                             
                                                 </div>

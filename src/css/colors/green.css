@@ -4437,7 +4437,7 @@ body.map-fullscreen #map {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   left: -1px;
-  padding: 3px 65px;
+  padding: 3px 63px;
   width: 56%;
   position: absolute;
   top: -13px;
@@ -4455,9 +4455,9 @@ body.map-fullscreen #map {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  left: 8px;
-  padding: 3px 65px;
-  width: 53%;
+  left: 7px;
+  padding: 3px 63px;
+  width: 55%;
   position: absolute;
   top: -13px;
 }
@@ -4470,12 +4470,12 @@ body.map-fullscreen #map {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
   background-color: #0dcd25;
   color: #fff;
-  width: 53%;
+  width: 55%;
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  left: 8px;
-  padding: 3px 65px;
+  left: 7px;
+  padding: 3px 63px;
   position: absolute;
   top: 30px;
 }
@@ -4488,12 +4488,12 @@ body.map-fullscreen #map {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
   background-color: #cd0d0d;
   color: #fff;
-  width: 53%;
+  width: 55%;
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  left: 8px;
-  padding: 3px 65px;
+  left: 7px;
+  padding: 3px 63px;
   position: absolute;
   top: 75px;
 }

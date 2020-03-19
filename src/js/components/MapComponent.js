@@ -36,15 +36,15 @@ class MapComponent extends React.Component {
         const position = [27.505, 84.09];
         return ( 
             <Map
-            // preferCanvas
+          preferCanvas
           zoom={4}
           maxZoom={18}
           attributionControl
           zoomControl
           doubleClickZoom
           scrollWheelZoom
-        //   dragging
-        //   animate
+          dragging
+          animate
            center={position} style={{height:'900px',width:'100%'}}>
                 <TileLayer
                 // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -87,7 +87,7 @@ class MapComponent extends React.Component {
                      }
                     
                 return (
-                    <CircleMarker onClick={console.log(this)} ref={this.circleMarkerRef} className='blinking' radius={filteredRadius} color={filtercolor} fillColor={filtercolor} style={{pointerType: 'cursor',animation: 'fade 1s infinite alternate'}} center={{lat:data.Latitude, lng:data.Longitude}} position={position}>
+                    <CircleMarker ref={this.circleMarkerRef} className='blinking' radius={filteredRadius} color={filtercolor} fillColor={filtercolor} style={{pointerType: 'cursor',animation: 'fade 1s infinite alternate'}} center={{lat:data.Latitude, lng:data.Longitude}} position={position}>
                     <Popup>
                         <div class="infobox ">
                             <div class="inner">

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MapComponent from './MapComponent';
 import Logo from '../../images/logo.jpg';
 import '../../css/green.css';
-// import CoronaData from '../../data/coronaData_13March.json';
+import CoronaData from '../../data/coronaData_13March.json';
 class MainComponent extends Component {
     constructor(props) {
         super(props);

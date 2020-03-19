@@ -16,7 +16,7 @@ Covid-19 Map Tracking requires [Node.js](https://nodejs.org/) v4+ to run.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ git clone git@github.com:naxa-developers/sakchyam_client.git
+$ git clone git@github.com:varun2948/CovidMap.git
 $ npm install
 $ npm start
 ```

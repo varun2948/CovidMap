@@ -10,6 +10,8 @@ import {
   } from 'react-leaflet';
 import L from 'leaflet';
 import 'react-leaflet-markercluster/dist/styles.min.css';
+import 'leaflet/dist/leaflet.css';
+import '../../css/green.css';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 
 import Logo from '../../images/logo.jpg';

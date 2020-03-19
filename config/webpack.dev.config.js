@@ -64,7 +64,7 @@ module.exports = env => {
         //   contextRegExp: /moment$/
         // }),
         new HtmlWebpackPlugin({
-          title: 'Sakchyam',
+          title: 'CovidMap',
           template: './src/index.html',
           filename: 'index.html',
           inject: true,

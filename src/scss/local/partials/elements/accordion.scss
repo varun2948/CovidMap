@@ -1,0 +1,35 @@
+.acc{
+    .acc-list{
+        .acc-header{
+            position: relative;
+            padding:0.6125rem 2rem;
+            padding-right: 3rem;
+            @include transition(all .5s ease-in-out);
+            cursor: pointer;
+            &::before,
+            &::after{
+                font-size: 1.4rem;
+                position: absolute;
+                top:0;
+                right: 1.5rem;
+                font-family: 'Material Icons';
+                color:$white-color;
+                z-index: 99;
+            }
+            &::before{
+                content: 'arrow_drop_down';
+            }
+            
+            &.active{
+                &::before{
+                    content: 'arrow_drop_up';
+                } 
+                
+            }
+        }
+        .acc-content{
+            display: none;
+            padding:.5rem  2rem;
+        }
+    }
+}

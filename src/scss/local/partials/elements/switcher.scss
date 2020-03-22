@@ -1,0 +1,287 @@
+.filter{
+    margin-top:1.5rem;
+        li{
+            .switch-header{
+                cursor: pointer;
+                position: relative;
+                padding-right: 3rem;
+                &::before,
+                &::after{
+                    font-size: 1.4rem;
+                    position: absolute;
+                    top:0;
+                    right: 1.5rem;
+                    font-family: 'Material Icons';
+                    color:$white-color;
+                    z-index: 99;
+                }
+                &::before{
+                    content: 'arrow_drop_down';
+                }
+                
+                &.active{
+                    &::before{
+                        content: 'arrow_drop_up';
+                    } 
+                    
+                }
+            }
+            ul.filter-dropdown-menu{
+                padding:0 1rem;
+                display: none;
+            }
+        }
+}
+.switch-filter{
+    @include display-flex(flex);
+    @include align-items-center;
+    @include justify-content-between;
+    padding:.5rem 2rem;
+    h6{
+        color:$white-color;
+        font-weight: 500;
+        font-size: .775rem;
+        flex-grow: 1;
+        position: relative;
+        padding-left: 1.5rem;
+        margin:0;
+        &::before{
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 8px;
+            @include radius(50%);
+            left: 0;
+            top: 0px;
+        }
+        &.green{
+            &::before{
+                background-color: $green-color;
+                -webkit-animation: greenpulse 2s infinite;
+            -moz-animation: greenpulse 2s infinite;
+            animation: greenpulse 2s infinite;
+            }
+        }
+        &.orange{
+            &::before{
+                background-color:$orange-color;
+                -webkit-animation: orangepulse 2s infinite;
+            -moz-animation: orangepulse 2s infinite;
+            animation: orangepulse 2s infinite;
+            }
+        }
+        &.red{
+            &::before{
+                background-color:$red-color;
+                -webkit-animation: redpulse 2s infinite;
+            -moz-animation: redpulse 2s infinite;
+            animation: redpulse 2s infinite;
+            }
+        }
+        &.red-dark{
+            &::before{
+                background-color:$red-dark;
+                -webkit-animation: purplepusle 2s infinite;
+            -moz-animation: purplepusle 2s infinite;
+            animation: purplepusle 2s infinite;
+            }
+        }
+        &.yellow{
+            &::before{
+                background-color:$yellow-color;
+                -webkit-animation: yellowpulse 2s infinite;
+            -moz-animation: yellowpulse 2s infinite;
+            animation: yellowpulse 2s infinite;
+            }
+        }
+
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 32px;
+        height: 6px;
+        margin:0 .6125rem;
+        
+    
+        input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+    
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: $text-light;
+          @include transition(.4s ease-in-out);
+          @include radius(30px);
+    
+          &::before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 0;
+            bottom:-3px;
+            @include radius(50%);
+            background-color: $primary-light;
+            @include transition(.4s ease-in-out);
+            @include box-shadow(0 1px 6px rgba($primary-light-1, 0.5));
+          }
+    
+          .round {
+            @include radius(34px);
+    
+            &::before {
+              @include radius(50%);
+            }
+          }
+        }
+    
+        input:checked+.slider {
+          background-color: $orange-color;
+        }
+    
+        input:checked+.slider:before {
+          -webkit-transform: translateX(17px);
+          -ms-transform: translateX(17px);
+          transform: translateX(17px);
+          background-color: $orange-color;
+        }
+    
+      }
+}
+@-webkit-keyframes greenpulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($green-color, 0.6);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba($green-color, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba($green-color, 0);
+    }
+  }
+  @keyframes greenpulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($green-color, 0.6);
+      box-shadow: 0 0 0 0 rgba($green-color, 0.6);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba($green-color, 0);
+        box-shadow: 0 0 0 10px rgba($green-color, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba($green-color, 0);
+        box-shadow: 0 0 0 0 rgba($green-color, 0);
+    }
+  }
+  
+  
+  @-webkit-keyframes orangepulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($orange-color, 0.6);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba($orange-color, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba($orange-color, 0);
+    }
+  }
+  @keyframes orangepulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($orange-color, 0.6);
+      box-shadow: 0 0 0 0 rgba($orange-color, 0.6);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba($orange-color, 0);
+        box-shadow: 0 0 0 10px rgba($orange-color, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba($orange-color, 0);
+        box-shadow: 0 0 0 0 rgba($orange-color, 0);
+    }
+  }
+  
+  @-webkit-keyframes redpulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($red-color, 0.6);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba($red-color, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba($red-color, 0);
+    }
+  }
+  @keyframes redpulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($red-color, 0.6);
+      box-shadow: 0 0 0 0 rgba($red-color, 0.6);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba($red-color, 0);
+        box-shadow: 0 0 0 10px rgba($red-color, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba($red-color, 0);
+        box-shadow: 0 0 0 0 rgba(193,244,65, 0);
+    }
+  }
+  
+  @-webkit-keyframes purplepusle {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($red-dark, 0.6);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba($red-dark, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba($red-dark, 0);
+    }
+  }
+  @keyframes purplepusle {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($red-dark, 0.6);
+      box-shadow: 0 0 0 0 rgba($red-dark, 0.6);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba($red-dark, 0);
+        box-shadow: 0 0 0 10px rgba($red-dark, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba($red-dark, 0);
+        box-shadow: 0 0 0 0 rgba($red-dark, 0);
+    }
+  }
+  @-webkit-keyframes yellowpulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($yellow-color, 0.6);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba($yellow-color, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba($yellow-color, 0);
+    }
+  }
+  @keyframes yellowpulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($yellow-color, 0.6);
+      box-shadow: 0 0 0 0 rgba($yellow-color, 0.6);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba($yellow-color, 0);
+        box-shadow: 0 0 0 10px rgba($yellow-color, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba($yellow-color, 0);
+        box-shadow: 0 0 0 0 rgba($yellow-color, 0);
+    }
+  }

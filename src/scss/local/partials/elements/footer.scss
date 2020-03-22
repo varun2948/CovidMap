@@ -1,0 +1,17 @@
+
+footer{
+    &.aside-footer{
+        @include display-flex(flex);
+        @include justify-content-between;
+        @include align-items-center;
+        position: absolute;
+        width:100%;
+        bottom:0;
+        padding:1rem;
+        border-top: 1px solid $border-color;
+        color:$white-color;
+        span{
+            font-size:.875rem;
+        }
+    }
+}

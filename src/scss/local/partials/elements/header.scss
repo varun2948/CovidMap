@@ -1,0 +1,39 @@
+
+.aside-header{
+    padding:1rem;
+    border-bottom: 1px solid $border-color;
+    a{
+        @include display-flex(flex);
+        @include justify-content-start;
+        @include align-items-center;
+        color:$primary-light;
+        font-weight: 600;
+        font-size: 1rem;
+        img{
+            @include flex(0 0 50px);
+            max-width: 50px;
+            height: 50px;
+            @include radius(50%);
+            margin-right: 10px;
+        }
+        .logo-content{
+            h1{
+                color:$white-color;
+                text-transform: uppercase;
+                font-weight: 900;
+                font-size: 2rem;
+                margin:0;
+                line-height: 1;
+            }
+            span{
+                text-transform: capitalize;
+                &.country-text{
+                    color:$red-color;
+                    margin-left:.25rem;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                }
+            }
+        }
+    }
+}
